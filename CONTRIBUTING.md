@@ -21,8 +21,10 @@ Our current testing procedure is to click on each link and check for broken link
 
 ## Bug Reports
 
-Report bugs to your group's leader. You can also report bugs here:
+Report bugs to Spencer for review. You can also report bugs here:
 
+
+https://discord.gg/6ADxcFvK ; Discord channel for an additonal line of communication.
 https://canvas.northseattle.edu/courses/2023764/discussion_topics/12224321
 
 ## Code of Conduct
