@@ -1,3 +1,5 @@
+require_relative './.vagrant/credentials'
+
 Vagrant.configure("2") do |config|
 config.vm.box = "dummy"
 
@@ -10,9 +12,10 @@ config.vm.box = "dummy"
 		aws.ami = "ami-02701bcdc5509e57b" #Ubuntu Server 18.04
 		aws.instance_type = "t2.nano"
 		aws.security_groups = ["vagrant"]
+		aws.elastic_ip = "34.215.194.24"
 		override.vm.synced_folder ".", "/vagrant", disabled: true
 		override.ssh.username = "ubuntu"
-		override.ssh.private_key_path = "~/it115.pem"
+		override.ssh.private_key_path = "~/it115.pem"		
   
 	end
 
