@@ -5,9 +5,9 @@ config.vm.box = "dummy"
 
 	config.vm.provider :aws do |aws, override|
     
-		aws.access_key_id = "AKIA3FXPI52PARRK2C4F"
-		aws.secret_access_key = "Q55MO0+rV+ZLAJUed0rwFI6cKFdEFmHdlYJ4IePO"
-		aws.keypair_name = "it115"
+		aws.access_key_id = ACCESS_KEY_ID
+		aws.secret_access_key = SECRET_ACCESS_KEY
+		aws.keypair_name = KEYPAIR_NAME
 		aws.region = "us-west-2"
 		aws.ami = "ami-02701bcdc5509e57b" #Ubuntu Server 18.04
 		aws.instance_type = "t2.nano"
