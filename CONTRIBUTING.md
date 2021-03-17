@@ -59,3 +59,5 @@ Please respect the Game's purpose and design structure. The design structure is 
 * Be sure to keep your group's content in it's own folder!
 * Also be sure to fix any broken links in your group's folder!
 * Any stray files or directories left at the top level will be deleted.
+
+### Kyle's contribution to CONTRIBUTING.md
