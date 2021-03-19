@@ -13,7 +13,8 @@
      
   - name: Install MySQL
     apt: 
-     name: mysql-server
+     name: [ mysql-common, mysql-server ]
+     update_cache: yes
      state: present
          
   - name: restart the MySQL service
@@ -65,19 +66,28 @@
      path: /home/admin/.ssh/it115
      mode: 0600
      owner: admin
-     
-  - name: clone github repository to instance
-    git:
-      repo: http://github.com/ashvinau/the-wild-west-game
-      dest: /tmp/wildwest/
-      
+          
   - name: remove default apache index.html
     file:
       path: /var/www/html/index.html
       state: absent  
       
-  - name: copy html files to web root directory
-    raw: cp /tmp/wildwest/html/* /var/www/html/
-     
-  - name: copy html files to web root directory
-    raw: cp /tmp/wildwest/images/* /var/www/html/
+  - name: copy script to clone repo to server
+    copy:
+      src: ./config/clonerepo.sh
+      dest: /home/admin/clonerepo.sh
+      owner: root
+      mode: 777
+      
+  - name: run script to clone repo
+    shell: ./clonerepo.sh
+    args:
+      chdir: /home/admin/
+      executable: /bin/bash
+      
+  - name: create cron job to periodically clone the repo
+    cron:
+      name: "Clone repo to web root"
+      hour: "0"
+      job: /home/admin/clonerepo.sh
+      
